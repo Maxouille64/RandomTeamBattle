@@ -24,6 +24,7 @@ function getRandom(min, max) {
 
     return random;
 };
+
 console.log("TEST2");
 ConsoleRoom.prototype.customCommands = {};
 ConsoleRoom.prototype.customCommands['rtb'] = function(Self, Tier) {
