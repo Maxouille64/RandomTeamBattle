@@ -1,13 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Random Team Battle",
-  "version": "1.0",
-  "background": {
-    "persistent": true,
-    "scripts": [
-        "background.js"
-    ]
-  },
+  "version": "1.0.9",
 
   "description": "Play any tier with a random team!",
 
@@ -17,23 +11,29 @@
 
   "browser_action": {
     "default_icon": "icons/bn128.png",
-    "default_popup": "MyPopup.html",
-    "default_title": "RTB",
-    "browser_style": true
+    "default_popup": "popup/popup.html",
+    "default_title": "RTB"
   },
 
 
-    "content_scripts": [
-      {
-        "matches": ["http://play.pokemonshowdown.com/","https://play.pokemonshowdown.com/","http://play.pokemonshowdown.com/*","https://play.pokemonshowdown.com/*","http://*.psim.us/","https://*.psim.us/","http://*.psim.us/*","https://*.psim.us/*"],
-        "js": ["production.min.js","content.js"]
-      }
-    ],
+  "content_scripts": [
+    {
+      "matches": ["*://play.pokemonshowdown.com/*", "*://*.psim.us/*"],
+      "js": ["production.min.js","content.js"]
+    }
+  ],
 
   "permissions": [
-    "history",
-    "tabs",
-    "cookies",
-    "https://www.drive.google.com/"
-  ]
+    "storage"
+  ],
+
+  "web_accessible_resources": [
+    "*.js"
+  ],
+
+  "browser_specific_settings": {
+    "gecko": {
+        "id": "{a93f22b4-7003-4e54-accd-2863d9d11ed8}"
+    }
+  }
 }
