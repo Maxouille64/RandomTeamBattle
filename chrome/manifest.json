@@ -1,5 +1,5 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Random Team Battle",
   "version": "1.0.0",
 
@@ -9,7 +9,7 @@
     "128": "icons/bn128.png"
   },
 
-  "browser_action": {
+  "action": {
     "default_icon": "icons/bn128.png",
     "default_popup": "popup/popup.html",
     "default_title": "RTB"
@@ -27,7 +27,8 @@
     "storage"
   ],
 
-  "web_accessible_resources": [
-    "*.js"
-  ]
+  "web_accessible_resources": [{
+	  "resources": ["showdown.js","production.min.js"],
+	  "matches": ["<all_urls>"]
+}]
 }
