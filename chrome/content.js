@@ -11,13 +11,15 @@
 var loaded = false;
 
 function load(file) {
-    let elm = document.createElement("script")
-    elm.src = chrome.runtime.getURL("/" + file)
-    document.body.appendChild(elm)
+	let s = document.createElement('script');
+	s.src = chrome.runtime.getURL(file);
+	s.onload = function() {
+		this.remove();
+	};
+	(document.head || document.documentElement).appendChild(s);
 };
 chrome.storage.sync.get('enabled',val => {
-  if (val.enabled === '' ||loaded == true) return;
-  loaded = true
-  load("production.min.js");
-  load("showdown.js");
+	if (val.enabled === '') return;
+	load("production.min.js");
+	load("showdown.js");
 });
