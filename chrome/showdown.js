@@ -137,7 +137,7 @@ teams['gen72v2'] = "1lW34-E3mumdMrDaA6efLfF2PrVh9ZzSn";
 teams['1v1'] = "1KW3qNHO1B1S4BfJFhI0mKTO-ggNw_A7I";
 teams['2v2'] = "19m15-Z-xQW78ypm2LHmehYf1C1QM5yKq";
 
-const BYPASS_CORS = 'https://cors-anywhere-hd.herokuapp.com/https://drive.google.com/uc?id=';
+const GDRIVE = 'https://drive.google.com/uc?id=';
 
 function getRandom(min, max) {
     let random = (Math.floor(Math.random() * max/2)+ min/2) * 2;
@@ -147,7 +147,7 @@ function getRandom(min, max) {
 app.send('/code RANDOMIZABLE FORMATS: \n' + Object.keys(teams));
 ConsoleRoom.prototype.customCommands = {};
 ConsoleRoom.prototype.customCommands['rtb'] = function(Self, Tier) {
-  fetch(BYPASS_CORS + teams[Tier])
+  fetch(GDRIVE + teams[Tier])
   .then(rep => rep.text())
   .then(result =>  {
     let myteams = result.split("===")
