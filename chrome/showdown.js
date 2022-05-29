@@ -81,22 +81,22 @@ teams['gen7uu'] = "1qewEegDckuR80gILgqQwB9TpdOI4L2gq";
 teams['gen7zu'] = "1Olbfq8NubVRY_mtuvrtab7fSV9ofj6MI";
 teams['gen7bss'] = "1mILVgye7JgqZtwHNYAHS3jEdWoHppEeg";
 //SS
-teams['dou'] = "1cCAYdpBNSJfoOSFqufT_7IdATqooTBWb";
-teams['natdexmonotype'] = "1OtIs8G9RHrgAxB9pCR6A7-XLhX49ybWA";
-teams['gen8natdexuu'] = "1ZtDMfIycz0HCmKrIDZuhD3ZMxTsMa7Ix";
-teams['gen8bss'] = "12wQxFADIpbsj3N1puYlzWQKzAk0Wyt56";
-teams['duu'] = "1W0o3boP7qOtSv3XD9pLFHYx-Owp0VP8O";
-teams['lc'] = "1VoJReISY5tjRkSgM2phFuuPMKQxPZRXe";
-teams['monotype'] = "1BfGKBANTg6-2liEovm85c5UsCLK1iv46";
-teams['natdex'] = "1iDXFvSKNLuzd1YR0mmEKDSebaaBSDfVw";
-teams['natdexag'] = "1vAWX6lRPjCX2GO83D3kQ2F6GBLDfLjiX";
-teams['nfe'] = "1RWezbtM-rdYcn32L1LYnlF2UTpKO-Wnq";
-teams['nu'] = "1CDOE7DFTkxUZqwlKCHYON9aMyBBl8GCr";
-teams['pu'] = "1tPXHEmUlZ2U0VFNTKx_yWmsbExHqyeWH";
-teams['ru'] = "10TT7A65p60w0nNKQvrMdbJZYsLcNP6mi";
-teams['ubers'] = "10itsyg3eUzFkY2dlCMk34USlggcDvl40";
-teams['uu'] = "1FjxGDoaYRNF0dQN7eg_Bpwvi2f2gS_t5";
-teams['zu'] = "1UWaUWR6ESYcMFg6WQvJdYwapEIKPkWTx";
+teams['gen8dou'] = "1cCAYdpBNSJfoOSFqufT_7IdATqooTBWb";
+teams['gen8natdexmonotype'] = "1OtIs8G9RHrgAxB9pCR6A7-XLhX49ybWA";
+teams['gen8nationaldexuu'] = "1ZtDMfIycz0HCmKrIDZuhD3ZMxTsMa7Ix";
+teams['gen8bssfactory'] = "12wQxFADIpbsj3N1puYlzWQKzAk0Wyt56";
+teams['gen8doublesuu8duu'] = "1W0o3boP7qOtSv3XD9pLFHYx-Owp0VP8O";
+teams['gen8lc'] = "1VoJReISY5tjRkSgM2phFuuPMKQxPZRXe";
+teams['gen8monotype'] = "1BfGKBANTg6-2liEovm85c5UsCLK1iv46";
+teams['gen8natdex'] = "1iDXFvSKNLuzd1YR0mmEKDSebaaBSDfVw";
+teams['gen8natdexag'] = "1vAWX6lRPjCX2GO83D3kQ2F6GBLDfLjiX";
+teams['gen8nfe'] = "1RWezbtM-rdYcn32L1LYnlF2UTpKO-Wnq";
+teams['gen8nu'] = "1CDOE7DFTkxUZqwlKCHYON9aMyBBl8GCr";
+teams['gen8pu'] = "1tPXHEmUlZ2U0VFNTKx_yWmsbExHqyeWH";
+teams['gen8ru'] = "10TT7A65p60w0nNKQvrMdbJZYsLcNP6mi";
+teams['gen8ubers'] = "10itsyg3eUzFkY2dlCMk34USlggcDvl40";
+teams['gen8uu'] = "1FjxGDoaYRNF0dQN7eg_Bpwvi2f2gS_t5";
+teams['gen8zu'] = "1UWaUWR6ESYcMFg6WQvJdYwapEIKPkWTx";
 teams['gen8bdspou'] = "1Pt_Mev8VWqwYPQpWrMQdWSzeJfZ8jwbA";
 teams['gen8cap'] = "19hQvCNZxOPsX6dHYhfCPe25mhKFRiDXf";
 
@@ -150,19 +150,25 @@ ConsoleRoom.prototype.customCommands['rtb'] = function(Self, Tier) {
   fetch(BYPASS_CORS + teams[Tier])
   .then(rep => rep.text())
   .then(result =>  {
-    let myteams = result.split("===")
-    var team = myteams[getRandom(2, myteams.length)].replace(/^\s\s*/, '').replace(/\s\s*$/, '');
-    app.send("/code " + team);
-    team = PokemonTeams.importTeam(team);
-    pack = PokemonTeams.packTeam(team);
-    app.send('/utm , ' + pack);
-    app.send("/battle! " + Tier);
+    let myteams = result.split("===");
+    var team = myteams[getRandom(2, myteams.length)];
+    if(team) {
+      team.replace(/^\s\s*/, '');
+      team.replace(/\s\s*$/, '');
+      app.send("/code " + team);
+      team_json = PokemonTeams.importTeam(team);
+      app.sendTeam(team_json);
+      app.send("/battle! " + Tier);
+    } else {
+      app.send("/code request failed/unavailable tier, try with /rtb [tier] in a chatroom");
+    }
+
 })};
 ConsoleRoom.prototype.customCommands['rtc'] = function(Self, Tier, User) {
   fetch(BYPASS_CORS + teams[Tier])
   .then(rep => rep.text())
   .then(result =>  {
-    let myteams = result.split("===")
+    let myteams = result.split("===");
     var team = myteams[getRandom(2, myteams.length)].replace(/^\s\s*/, '').replace(/\s\s*$/, '');
     app.send("/code " + team);
     team = PokemonTeams.importTeam(team);
