@@ -20,13 +20,19 @@ chrome.storage.sync.get('enabled', val => {
 	load("production.min.js");
 	load("showdown.js");
 	const p = document.createElement("center");
+	const p2 = document.createElement("center");
 	const bouton = document.createElement("button");
+	const bouton2 = document.createElement("button");
 	const titre = document.createElement("strong");
 	const soustitre = document.createElement("small");
 	const br = document.createElement("br");
+	const battleform = document.getElementsByClassName('battleform')[0];
 	bouton.id = "rtb";
 	bouton.className = "button mainmenu";
+	p2.className = "cancel buttonbar";
 	bouton.name = "rtb";
+	bouton2.name = "cancelSearch";
+	bouton2.innerText = "Cancel";
 	bouton.setAttribute("onclick","ConsoleRoom.prototype.customCommands['rtb'](null,document.getElementsByName('format')[0].value);");
 	titre.innerText = "Battle!";
 	soustitre.innerText = "with a randomized team";
@@ -35,5 +41,7 @@ chrome.storage.sync.get('enabled', val => {
 	bouton.appendChild(br);
 	bouton.appendChild(soustitre);
 	p.appendChild(bouton);
-	document.getElementsByClassName('battleform')[0].appendChild(p);
+	p2.appendChild(bouton2)
+	battleform.appendChild(p);
+	battleform.appendChild(p2);
 });
