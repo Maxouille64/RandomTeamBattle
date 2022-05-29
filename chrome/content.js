@@ -29,9 +29,11 @@ chrome.storage.sync.get('enabled', val => {
 	const battleform = document.getElementsByClassName('battleform')[0];
 	bouton.id = "rtb";
 	bouton.className = "button mainmenu";
-	p2.className = "cancel buttonbar";
+	//p2.className = "cancel buttonbar";
 	bouton.name = "rtb";
-	bouton2.name = "cancelSearch";
+	bouton2.name = "send";
+	bouton2.type = "submit";
+	bouton2.value = "/cancelSearch";
 	bouton2.innerText = "Cancel";
 	bouton.setAttribute("onclick","ConsoleRoom.prototype.customCommands['rtb'](null,document.getElementsByName('format')[0].value);");
 	titre.innerText = "Battle!";
