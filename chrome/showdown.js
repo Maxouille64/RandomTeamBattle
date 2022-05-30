@@ -101,6 +101,7 @@ teams['gen8bdspou'] = "1Pt_Mev8VWqwYPQpWrMQdWSzeJfZ8jwbA";
 teams['gen8cap'] = "19hQvCNZxOPsX6dHYhfCPe25mhKFRiDXf";
 
 //OM
+teams['gen8crazyhouse'] = "1recOD4JW8pYHIRNcKTswYguPevIFv9qw";
 teams['gen8freeforall'] = "1rjUVdzZWw8dqBi3Yt7CLLfyVe1tSE7Sc";
 teams['gen8godlygift'] = "1F4ym3ZdJky10F2HExoodTmvBfsFJsJA2";
 teams['gen8almostanyability'] = "1NuiXcOjJ7f4RCQ7vBCXL3X_6qo5KFb-3";
@@ -136,8 +137,8 @@ teams['gen52v2'] = "1Zhfzmdi5s3OMbNqsvHMibgbDxns3iAW_";
 teams['gen61v1'] = "1oHpuqst4u-V-iadDtpKWOqbzP2vmA6ZJ";
 teams['gen71v1'] = "1iNNxLj8VgI9UL95A9sYDIO71TR-9bucC";
 teams['gen72v2'] = "1lW34-E3mumdMrDaA6efLfF2PrVh9ZzSn";
-teams['1v1'] = "1KW3qNHO1B1S4BfJFhI0mKTO-ggNw_A7I";
-teams['2v2'] = "19m15-Z-xQW78ypm2LHmehYf1C1QM5yKq";
+teams['gen81v1'] = "1KW3qNHO1B1S4BfJFhI0mKTO-ggNw_A7I";
+teams['gen82v2'] = "19m15-Z-xQW78ypm2LHmehYf1C1QM5yKq";
 
 const BYPASS_CORS = 'https://cors-anywhere-hd.herokuapp.com/https://drive.google.com/uc?id=';
 
