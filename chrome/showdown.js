@@ -101,12 +101,14 @@ teams['gen8bdspou'] = "1Pt_Mev8VWqwYPQpWrMQdWSzeJfZ8jwbA";
 teams['gen8cap'] = "19hQvCNZxOPsX6dHYhfCPe25mhKFRiDXf";
 
 //OM
-teams['aaa'] = "1NuiXcOjJ7f4RCQ7vBCXL3X_6qo5KFb-3";
-teams['bh'] = "1eemY8bv7ZHqQzdg7uGBTkEBfUyG8_xRK";
+teams['gen8freeforall'] = "1rjUVdzZWw8dqBi3Yt7CLLfyVe1tSE7Sc";
+teams['gen8godlygift'] = "1F4ym3ZdJky10F2HExoodTmvBfsFJsJA2";
+teams['gen8almostanyability'] = "1NuiXcOjJ7f4RCQ7vBCXL3X_6qo5KFb-3";
+teams['gen8balancedhackmons'] = "1eemY8bv7ZHqQzdg7uGBTkEBfUyG8_xRK";
 teams['camomons'] = "19LiUeolOSbuwOIDrKg14JoJldFU9DxD-";
 teams['gen8mnm'] = "101756U9tIYkemXRiDgKjvje5YZl8i7X_";
 teams['natdexbh'] = "13hCSSkS-XX7kjRvZeiHZ6vA-KX0Ydmfs";
-teams['stabmons'] = "1C_qDplncOT7QvrN-ISIn6DZ7nASaDaTD";
+teams['gen8stabmons'] = "1C_qDplncOT7QvrN-ISIn6DZ7nASaDaTD";
 teams['gen7abilitiesasmoves'] = "1jKz5WC-iWtN4jJjyu1UN36m68CwOwTns";
 teams['gen7anythinggoesmixandmega'] = "18buudvGsBdeKszsnifRAWjvbwofi9NjI";
 teams['gen7aaa'] = "1r_-OcHwpFJDHKmAdRV9dRLNIXzInbsNo";
@@ -144,6 +146,8 @@ function getRandom(min, max) {
     return random;
 };
 
+var cancel = false;
+
 app.send('/code RANDOMIZABLE FORMATS: \n' + Object.keys(teams));
 ConsoleRoom.prototype.customCommands = {};
 ConsoleRoom.prototype.customCommands['rtb'] = function(Self, Tier) {
@@ -152,13 +156,17 @@ ConsoleRoom.prototype.customCommands['rtb'] = function(Self, Tier) {
   .then(result =>  {
     let myteams = result.split("===");
     var team = myteams[getRandom(2, myteams.length)];
-    if(team) {
+    if (cancel == true) {
+      cancel = false;
+      return;
+    } else if(team) {
+      console.log(cancel)
       team.replace(/^\s\s*/, '');
       team.replace(/\s\s*$/, '');
       app.send("/code " + team);
       team_json = PokemonTeams.importTeam(team);
       app.sendTeam(team_json);
-      app.send("/battle! " + Tier);
+      app.send(`/battle! ${Tier}`);
     } else {
       app.send("/code request failed/unavailable tier, try with /rtb [tier] in a chatroom");
     }
@@ -169,12 +177,18 @@ ConsoleRoom.prototype.customCommands['rtc'] = function(Self, Tier, User) {
   .then(rep => rep.text())
   .then(result =>  {
     let myteams = result.split("===");
-    var team = myteams[getRandom(2, myteams.length)].replace(/^\s\s*/, '').replace(/\s\s*$/, '');
-    app.send("/code " + team);
-    team = PokemonTeams.importTeam(team);
-    pack = PokemonTeams.packTeam(team);
-    app.send('/utm , ' + pack);
-    app.send('/challenge ' + User + ", " + Tier);
+    var team = myteams[getRandom(2, myteams.length)];
+    if (team) {
+      team.replace(/^\s\s*/, '');
+      team.replace(/\s\s*$/, '');
+      app.send(`/code ${team}`);
+      team_json = PokemonTeams.importTeam(team);
+      app.sendTeam(team_json);
+      app.send(`/challenge ${User}, ${Tier}`);
+    } else {
+      app.send("/code request failed/unavailable tier, try with /rtb [tier] in a chatroom");
+    }
+
 })};
 ConsoleRoom.prototype.parseCommandOrig = ConsoleRoom.prototype.parseCommand;
 ConsoleRoom.prototype.parseCommand = function(Text) {
