@@ -101,13 +101,14 @@ teams['gen8bdspou'] = "1Pt_Mev8VWqwYPQpWrMQdWSzeJfZ8jwbA";
 teams['gen8cap'] = "19hQvCNZxOPsX6dHYhfCPe25mhKFRiDXf";
 
 //OM
+teams['gen8tiershift'] = "1_cQXfyC8GNfDlLxswaFrmBUwdkR-dzzW";
 teams['gen8crazyhouse'] = "1recOD4JW8pYHIRNcKTswYguPevIFv9qw";
 teams['gen8freeforall'] = "1rjUVdzZWw8dqBi3Yt7CLLfyVe1tSE7Sc";
 teams['gen8godlygift'] = "1F4ym3ZdJky10F2HExoodTmvBfsFJsJA2";
 teams['gen8almostanyability'] = "1NuiXcOjJ7f4RCQ7vBCXL3X_6qo5KFb-3";
 teams['gen8balancedhackmons'] = "1eemY8bv7ZHqQzdg7uGBTkEBfUyG8_xRK";
 teams['camomons'] = "19LiUeolOSbuwOIDrKg14JoJldFU9DxD-";
-teams['gen8mnm'] = "101756U9tIYkemXRiDgKjvje5YZl8i7X_";
+teams['gen8mixandmega'] = "101756U9tIYkemXRiDgKjvje5YZl8i7X_";
 teams['natdexbh'] = "13hCSSkS-XX7kjRvZeiHZ6vA-KX0Ydmfs";
 teams['gen8stabmons'] = "1C_qDplncOT7QvrN-ISIn6DZ7nASaDaTD";
 teams['gen7abilitiesasmoves'] = "1jKz5WC-iWtN4jJjyu1UN36m68CwOwTns";
@@ -123,7 +124,7 @@ teams['gen7inheritance'] = "11_PI2TVBbkDOrrRWWMNt07QrREpNN2LI";
 teams['gen7linked'] = "1rQziu2qL8yZY9H6S7pYz8Ei6VVmdSa6d";
 teams['gen7megamons'] = "1L3rrk0i36bilktcfPPYY_vp7XkYy3vek";
 teams['gen7mergemons'] = "1pTwiTbszU90swX-BMMAikVZnK9kk9vdK";
-teams['gen7mnm'] = "1uf7ez0Rc61dexAZczuJMOUp10G7cC7AL";
+teams['gen7mixandmega'] = "1uf7ez0Rc61dexAZczuJMOUp10G7cC7AL";
 teams['gen7natureswap'] = "1T-CF41qdsJeXS8vltVgo-mf1qsOQ1Ftt";
 teams['gen7partnersincrime'] = "1x55_oxLKnBtDEVUi5F1hAW099IdueHgL";
 teams['gen7stabmons'] = "1jNhuJmp2Z2CcHQa4ihUDfJk3IHc_lQGC";
@@ -140,7 +141,7 @@ teams['gen72v2'] = "1lW34-E3mumdMrDaA6efLfF2PrVh9ZzSn";
 teams['gen81v1'] = "1KW3qNHO1B1S4BfJFhI0mKTO-ggNw_A7I";
 teams['gen82v2'] = "19m15-Z-xQW78ypm2LHmehYf1C1QM5yKq";
 
-const BYPASS_CORS = 'https://cors-anywhere-hd.herokuapp.com/https://drive.google.com/uc?id=';
+const BYPASS_CORS = 'https://cors-anywhere-hd.herokuapp.com/https://drive.google.com/uc?id='; //à changer
 
 function getRandom(min, max) {
     let random = (Math.floor(Math.random() * max/2)+ min/2) * 2;
