@@ -107,7 +107,7 @@ teams['gen8freeforall'] = "1rjUVdzZWw8dqBi3Yt7CLLfyVe1tSE7Sc";
 teams['gen8godlygift'] = "1F4ym3ZdJky10F2HExoodTmvBfsFJsJA2";
 teams['gen8almostanyability'] = "1NuiXcOjJ7f4RCQ7vBCXL3X_6qo5KFb-3";
 teams['gen8balancedhackmons'] = "1eemY8bv7ZHqQzdg7uGBTkEBfUyG8_xRK";
-teams['camomons'] = "19LiUeolOSbuwOIDrKg14JoJldFU9DxD-";
+teams['gen8camomons'] = "19LiUeolOSbuwOIDrKg14JoJldFU9DxD-";
 teams['gen8mixandmega'] = "101756U9tIYkemXRiDgKjvje5YZl8i7X_";
 teams['natdexbh'] = "13hCSSkS-XX7kjRvZeiHZ6vA-KX0Ydmfs";
 teams['gen8stabmons'] = "1C_qDplncOT7QvrN-ISIn6DZ7nASaDaTD";
@@ -142,38 +142,57 @@ teams['gen81v1'] = "1KW3qNHO1B1S4BfJFhI0mKTO-ggNw_A7I";
 teams['gen82v2'] = "19m15-Z-xQW78ypm2LHmehYf1C1QM5yKq";
 
 const BYPASS_CORS = 'https://cors-anywhere-hd.herokuapp.com/https://drive.google.com/uc?id='; //à changer
+const cancel_button = document.getElementById("rtbcancelSearch");
 
 function getRandom(min, max) {
     let random = (Math.floor(Math.random() * max/2)+ min/2) * 2;
     return random;
 };
 
+function cancel_rtb() {
+  cancel = true;
+  cancel_button.style="display: none";
+};
+
+function rtb(Tier, txt){
+  let myteams = txt.split("===");
+  var team = myteams[getRandom(2, myteams.length)];
+  //for node.js use global instead of window
+  //var console = global.console;
+  window.console.log = function(msg){
+    if(msg.includes('|popup|Your team was rejected for the following reasons'))
+      //app.closePopup();
+      rtb(Tier,txt);
+      return;
+  };
+  if (cancel == true) {
+    cancel = false;
+    cancel_button.style="display: none";
+    return;
+  } else if(team) {
+    team.replace(/^\s\s*/, '');
+    team.replace(/\s\s*$/, '');
+    app.send("/code " + team);
+    team_json = PokemonTeams.importTeam(team);
+    app.sendTeam(team_json);
+    app.send(`/battle! ${Tier}`);
+  } else {
+    cancel_button.style="display: none";
+    app.send("/code request failed/unavailable tier, try with /rtb [tier] in a chatroom");
+    return;
+  };
+}
+
 var cancel = false;
 
 app.send('/code RANDOMIZABLE FORMATS: \n' + Object.keys(teams));
 ConsoleRoom.prototype.customCommands = {};
 ConsoleRoom.prototype.customCommands['rtb'] = function(Self, Tier) {
+  cancel_button.style="";
   fetch(BYPASS_CORS + teams[Tier])
   .then(rep => rep.text())
-  .then(result =>  {
-    let myteams = result.split("===");
-    var team = myteams[getRandom(2, myteams.length)];
-    if (cancel == true) {
-      cancel = false;
-      return;
-    } else if(team) {
-      console.log(cancel)
-      team.replace(/^\s\s*/, '');
-      team.replace(/\s\s*$/, '');
-      app.send("/code " + team);
-      team_json = PokemonTeams.importTeam(team);
-      app.sendTeam(team_json);
-      app.send(`/battle! ${Tier}`);
-    } else {
-      app.send("/code request failed/unavailable tier, try with /rtb [tier] in a chatroom");
-    }
+  .then(result =>  rtb(Tier, result))};
 
-})};
 ConsoleRoom.prototype.customCommands['rtc'] = function(Self, Tier, User) {
   fetch(BYPASS_CORS + teams[Tier])
   .then(rep => rep.text())
@@ -228,7 +247,16 @@ ConsoleRoom.prototype.parseCommand = function(Text) {
       target = '';
       noSpace = true;
     }
-  }
+  };
   if (this.customCommands[cmd.toLowerCase()]) return this.customCommands[cmd.toLowerCase()](this, target, user);
   return this.parseCommandOrig(Text);
 };
+
+/**
+window.console.log = function(msg){
+  if(msg.includes('|challstr|'))
+    alert(msg);
+    cancel_button.style="display: none";
+    return;
+};
+*/
