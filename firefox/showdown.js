@@ -81,32 +81,36 @@ teams['gen7uu'] = "1qewEegDckuR80gILgqQwB9TpdOI4L2gq";
 teams['gen7zu'] = "1Olbfq8NubVRY_mtuvrtab7fSV9ofj6MI";
 teams['gen7bss'] = "1mILVgye7JgqZtwHNYAHS3jEdWoHppEeg";
 //SS
-teams['dou'] = "1cCAYdpBNSJfoOSFqufT_7IdATqooTBWb";
-teams['natdexmonotype'] = "1OtIs8G9RHrgAxB9pCR6A7-XLhX49ybWA";
-teams['gen8natdexuu'] = "1ZtDMfIycz0HCmKrIDZuhD3ZMxTsMa7Ix";
-teams['gen8bss'] = "12wQxFADIpbsj3N1puYlzWQKzAk0Wyt56";
-teams['duu'] = "1W0o3boP7qOtSv3XD9pLFHYx-Owp0VP8O";
-teams['lc'] = "1VoJReISY5tjRkSgM2phFuuPMKQxPZRXe";
-teams['monotype'] = "1BfGKBANTg6-2liEovm85c5UsCLK1iv46";
-teams['natdex'] = "1iDXFvSKNLuzd1YR0mmEKDSebaaBSDfVw";
-teams['natdexag'] = "1vAWX6lRPjCX2GO83D3kQ2F6GBLDfLjiX";
-teams['nfe'] = "1RWezbtM-rdYcn32L1LYnlF2UTpKO-Wnq";
-teams['nu'] = "1CDOE7DFTkxUZqwlKCHYON9aMyBBl8GCr";
-teams['pu'] = "1tPXHEmUlZ2U0VFNTKx_yWmsbExHqyeWH";
-teams['ru'] = "10TT7A65p60w0nNKQvrMdbJZYsLcNP6mi";
-teams['ubers'] = "10itsyg3eUzFkY2dlCMk34USlggcDvl40";
-teams['uu'] = "1FjxGDoaYRNF0dQN7eg_Bpwvi2f2gS_t5";
-teams['zu'] = "1UWaUWR6ESYcMFg6WQvJdYwapEIKPkWTx";
+teams['gen8dou'] = "1cCAYdpBNSJfoOSFqufT_7IdATqooTBWb";
+teams['gen8natdexmonotype'] = "1OtIs8G9RHrgAxB9pCR6A7-XLhX49ybWA";
+teams['gen8nationaldexuu'] = "1ZtDMfIycz0HCmKrIDZuhD3ZMxTsMa7Ix";
+teams['gen8bssfactory'] = "12wQxFADIpbsj3N1puYlzWQKzAk0Wyt56";
+teams['gen8doublesuu8duu'] = "1W0o3boP7qOtSv3XD9pLFHYx-Owp0VP8O";
+teams['gen8lc'] = "1VoJReISY5tjRkSgM2phFuuPMKQxPZRXe";
+teams['gen8monotype'] = "1BfGKBANTg6-2liEovm85c5UsCLK1iv46";
+teams['gen8natdex'] = "1iDXFvSKNLuzd1YR0mmEKDSebaaBSDfVw";
+teams['gen8natdexag'] = "1vAWX6lRPjCX2GO83D3kQ2F6GBLDfLjiX";
+teams['gen8nfe'] = "1RWezbtM-rdYcn32L1LYnlF2UTpKO-Wnq";
+teams['gen8nu'] = "1CDOE7DFTkxUZqwlKCHYON9aMyBBl8GCr";
+teams['gen8pu'] = "1tPXHEmUlZ2U0VFNTKx_yWmsbExHqyeWH";
+teams['gen8ru'] = "10TT7A65p60w0nNKQvrMdbJZYsLcNP6mi";
+teams['gen8ubers'] = "10itsyg3eUzFkY2dlCMk34USlggcDvl40";
+teams['gen8uu'] = "1FjxGDoaYRNF0dQN7eg_Bpwvi2f2gS_t5";
+teams['gen8zu'] = "1UWaUWR6ESYcMFg6WQvJdYwapEIKPkWTx";
 teams['gen8bdspou'] = "1Pt_Mev8VWqwYPQpWrMQdWSzeJfZ8jwbA";
 teams['gen8cap'] = "19hQvCNZxOPsX6dHYhfCPe25mhKFRiDXf";
 
 //OM
-teams['aaa'] = "1NuiXcOjJ7f4RCQ7vBCXL3X_6qo5KFb-3";
-teams['bh'] = "1eemY8bv7ZHqQzdg7uGBTkEBfUyG8_xRK";
-teams['camomons'] = "19LiUeolOSbuwOIDrKg14JoJldFU9DxD-";
-teams['gen8mnm'] = "101756U9tIYkemXRiDgKjvje5YZl8i7X_";
+teams['gen8tiershift'] = "1_cQXfyC8GNfDlLxswaFrmBUwdkR-dzzW";
+teams['gen8crazyhouse'] = "1recOD4JW8pYHIRNcKTswYguPevIFv9qw";
+teams['gen8freeforall'] = "1rjUVdzZWw8dqBi3Yt7CLLfyVe1tSE7Sc";
+teams['gen8godlygift'] = "1F4ym3ZdJky10F2HExoodTmvBfsFJsJA2";
+teams['gen8almostanyability'] = "1NuiXcOjJ7f4RCQ7vBCXL3X_6qo5KFb-3";
+teams['gen8balancedhackmons'] = "1eemY8bv7ZHqQzdg7uGBTkEBfUyG8_xRK";
+teams['gen8camomons'] = "19LiUeolOSbuwOIDrKg14JoJldFU9DxD-";
+teams['gen8mixandmega'] = "101756U9tIYkemXRiDgKjvje5YZl8i7X_";
 teams['natdexbh'] = "13hCSSkS-XX7kjRvZeiHZ6vA-KX0Ydmfs";
-teams['stabmons'] = "1C_qDplncOT7QvrN-ISIn6DZ7nASaDaTD";
+teams['gen8stabmons'] = "1C_qDplncOT7QvrN-ISIn6DZ7nASaDaTD";
 teams['gen7abilitiesasmoves'] = "1jKz5WC-iWtN4jJjyu1UN36m68CwOwTns";
 teams['gen7anythinggoesmixandmega'] = "18buudvGsBdeKszsnifRAWjvbwofi9NjI";
 teams['gen7aaa'] = "1r_-OcHwpFJDHKmAdRV9dRLNIXzInbsNo";
@@ -120,7 +124,7 @@ teams['gen7inheritance'] = "11_PI2TVBbkDOrrRWWMNt07QrREpNN2LI";
 teams['gen7linked'] = "1rQziu2qL8yZY9H6S7pYz8Ei6VVmdSa6d";
 teams['gen7megamons'] = "1L3rrk0i36bilktcfPPYY_vp7XkYy3vek";
 teams['gen7mergemons'] = "1pTwiTbszU90swX-BMMAikVZnK9kk9vdK";
-teams['gen7mnm'] = "1uf7ez0Rc61dexAZczuJMOUp10G7cC7AL";
+teams['gen7mixandmega'] = "1uf7ez0Rc61dexAZczuJMOUp10G7cC7AL";
 teams['gen7natureswap'] = "1T-CF41qdsJeXS8vltVgo-mf1qsOQ1Ftt";
 teams['gen7partnersincrime'] = "1x55_oxLKnBtDEVUi5F1hAW099IdueHgL";
 teams['gen7stabmons'] = "1jNhuJmp2Z2CcHQa4ihUDfJk3IHc_lQGC";
@@ -134,46 +138,87 @@ teams['gen52v2'] = "1Zhfzmdi5s3OMbNqsvHMibgbDxns3iAW_";
 teams['gen61v1'] = "1oHpuqst4u-V-iadDtpKWOqbzP2vmA6ZJ";
 teams['gen71v1'] = "1iNNxLj8VgI9UL95A9sYDIO71TR-9bucC";
 teams['gen72v2'] = "1lW34-E3mumdMrDaA6efLfF2PrVh9ZzSn";
-teams['1v1'] = "1KW3qNHO1B1S4BfJFhI0mKTO-ggNw_A7I";
-teams['2v2'] = "19m15-Z-xQW78ypm2LHmehYf1C1QM5yKq";
+teams['gen81v1'] = "1KW3qNHO1B1S4BfJFhI0mKTO-ggNw_A7I";
+teams['gen82v2'] = "19m15-Z-xQW78ypm2LHmehYf1C1QM5yKq";
 
-const BYPASS_CORS = 'https://cors-anywhere-hd.herokuapp.com/https://drive.google.com/uc?id=';
+const BYPASS_CORS = 'https://cors-anywhere-hd.herokuapp.com/https://drive.google.com/uc?id='; //à changer
+const cancel_button = document.getElementById("rtbcancelSearch");
 
 function getRandom(min, max) {
     let random = (Math.floor(Math.random() * max/2)+ min/2) * 2;
     return random;
 };
 
+function cancel_rtb() {
+  cancel = true;
+  cancel_button.style="display: none";
+};
+
+function rtb(Tier, txt){
+  let myteams = txt.split("===");
+  var team = myteams[getRandom(2, myteams.length)];
+  //for node.js use global instead of window
+  //var console = global.console;
+  window.console.log = function(msg){
+    if(msg.includes('|popup|Your team was rejected for the following reasons'))
+      //app.closePopup();
+      rtb(Tier,txt);
+      return;
+  };
+  if (cancel == true) {
+    cancel = false;
+    cancel_button.style="display: none";
+    return;
+  } else if(team) {
+    team.replace(/^\s\s*/, '');
+    team.replace(/\s\s*$/, '');
+    app.send("/code " + team);
+    team_json = PokemonTeams.importTeam(team);
+    app.sendTeam(team_json);
+    app.send(`/battle! ${Tier}`);
+  } else {
+    cancel_button.style="display: none";
+    app.send("/code request failed/unavailable tier, try with /rtb [tier] in a chatroom");
+    return;
+  };
+}
+
+function rtc(Tier, User, txt) {
+    let myteams = txt.split("===");
+    var team = myteams[getRandom(2, myteams.length)];
+    window.console.log = function(msg){
+      if(msg.includes('|popup|Your team was rejected for the following reasons'))
+        //app.closePopup();
+        rtc(Tier,User,txt);
+        return;
+    };
+    if (team) {
+      team.replace(/^\s\s*/, '');
+      team.replace(/\s\s*$/, '');
+      app.send(`/code ${team}`);
+      team_json = PokemonTeams.importTeam(team);
+      app.sendTeam(team_json);
+      app.send(`/challenge ${User}, ${Tier}`);
+    } else {
+      app.send("/code request failed/unavailable tier, try with /rtb [tier] in a chatroom");
+    };
+};
+
+var cancel = false;
+
 app.send('/code RANDOMIZABLE FORMATS: \n' + Object.keys(teams));
 ConsoleRoom.prototype.customCommands = {};
 ConsoleRoom.prototype.customCommands['rtb'] = function(Self, Tier) {
+  cancel_button.style="";
   fetch(BYPASS_CORS + teams[Tier])
   .then(rep => rep.text())
-  .then(result =>  {
-    let myteams = result.split("===")
-    var n = getRandom(2, myteams.length);
-    var team = myteams[n];
-    team = team.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
-    app.send("/code " + team);
-    team = PokemonTeams.importTeam(team);
-    pack = PokemonTeams.packTeam(team);
-    app.send('/utm , ' + pack);
-    app.send("/battle! " + Tier);
-})};
+  .then(result =>  rtb(Tier, result))};
+
 ConsoleRoom.prototype.customCommands['rtc'] = function(Self, Tier, User) {
   fetch(BYPASS_CORS + teams[Tier])
   .then(rep => rep.text())
-  .then(result =>  {
-    let myteams = result.split("===")
-    var n = getRandom(2, myteams.length);
-    var team = myteams[n];
-    team = team.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
-    app.curSideRoom.send("/code " + team);
-    team = PokemonTeams.importTeam(team);
-    pack = PokemonTeams.packTeam(team);
-    app.send('/utm , ' + pack);
-    app.send('/challenge ' + User + ", " + Tier);
-})};
+  .then(result =>  rtc(Tier, User, result))};
+  
 ConsoleRoom.prototype.parseCommandOrig = ConsoleRoom.prototype.parseCommand;
 ConsoleRoom.prototype.parseCommand = function(Text) {
   var cmd = '';
@@ -210,7 +255,14 @@ ConsoleRoom.prototype.parseCommand = function(Text) {
       target = '';
       noSpace = true;
     }
-  }
+  };
   if (this.customCommands[cmd.toLowerCase()]) return this.customCommands[cmd.toLowerCase()](this, target, user);
   return this.parseCommandOrig(Text);
+};
+
+window.console.log = function(msg){
+  if(msg.includes('|init|battle'))
+    alert(msg);
+    cancel_button.style="display: none";
+    return;
 };
