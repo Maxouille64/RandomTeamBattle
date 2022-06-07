@@ -183,6 +183,27 @@ function rtb(Tier, txt){
   };
 }
 
+function rtc(Tier, User, txt) {
+    let myteams = txt.split("===");
+    var team = myteams[getRandom(2, myteams.length)];
+    window.console.log = function(msg){
+      if(msg.includes('|popup|Your team was rejected for the following reasons'))
+        //app.closePopup();
+        rtc(Tier,User,txt);
+        return;
+    };
+    if (team) {
+      team.replace(/^\s\s*/, '');
+      team.replace(/\s\s*$/, '');
+      app.send(`/code ${team}`);
+      team_json = PokemonTeams.importTeam(team);
+      app.sendTeam(team_json);
+      app.send(`/challenge ${User}, ${Tier}`);
+    } else {
+      app.send("/code request failed/unavailable tier, try with /rtb [tier] in a chatroom");
+    };
+};
+
 var cancel = false;
 
 app.send('/code RANDOMIZABLE FORMATS: \n' + Object.keys(teams));
@@ -196,21 +217,8 @@ ConsoleRoom.prototype.customCommands['rtb'] = function(Self, Tier) {
 ConsoleRoom.prototype.customCommands['rtc'] = function(Self, Tier, User) {
   fetch(BYPASS_CORS + teams[Tier])
   .then(rep => rep.text())
-  .then(result =>  {
-    let myteams = result.split("===");
-    var team = myteams[getRandom(2, myteams.length)];
-    if (team) {
-      team.replace(/^\s\s*/, '');
-      team.replace(/\s\s*$/, '');
-      app.send(`/code ${team}`);
-      team_json = PokemonTeams.importTeam(team);
-      app.sendTeam(team_json);
-      app.send(`/challenge ${User}, ${Tier}`);
-    } else {
-      app.send("/code request failed/unavailable tier, try with /rtb [tier] in a chatroom");
-    }
-
-})};
+  .then(result =>  rtc(Tier, User, result))};
+  
 ConsoleRoom.prototype.parseCommandOrig = ConsoleRoom.prototype.parseCommand;
 ConsoleRoom.prototype.parseCommand = function(Text) {
   var cmd = '';
@@ -254,7 +262,7 @@ ConsoleRoom.prototype.parseCommand = function(Text) {
 
 /**
 window.console.log = function(msg){
-  if(msg.includes('|challstr|'))
+  if(msg.includes('|init|battle'))
     alert(msg);
     cancel_button.style="display: none";
     return;
