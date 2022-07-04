@@ -176,6 +176,7 @@ function rtb(Tier, txt){
     team_json = PokemonTeams.importTeam(team);
     app.sendTeam(team_json);
     app.send(`/battle! ${Tier}`);
+    return;
   } else {
     cancel_button.style="display: none";
     app.send("/code request failed/unavailable tier, try with /rtb [tier] in a chatroom");
