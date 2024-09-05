@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "Random Team Battle",
-  "version": "1.0.0",
+  "name": "Pokemon Showdown Randomizer",
+  "version": "1.2.2",
 
   "description": "Play any tier with a random team!",
 
@@ -15,20 +15,32 @@
     "default_title": "RTB"
   },
 
+  "background": {
+    "service_worker": "background.js"
+  },
 
   "content_scripts": [
     {
       "matches": ["*://play.pokemonshowdown.com/*", "*://*.psim.us/*"],
-      "js": ["production.min.js","content.js"]
+      "js": ["content.js"]
     }
   ],
 
   "permissions": [
-    "storage"
+    "storage",
+    "cookies"
+  ],
+
+  "host_permissions": [
+    "*://play.pokemonshowdown.com/*",
+    "*://*.psim.us/*",
+    "*://drive.google.com/*",
+    "*://www.coupcritique.fr/*",
+    "*://*/*"
   ],
 
   "web_accessible_resources": [{
-	  "resources": ["showdown.js","production.min.js"],
+	  "resources": ["showdown.js","production.min.js","battle_safety_check.js"],
 	  "matches": ["<all_urls>"]
 }]
 }
