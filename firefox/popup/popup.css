@@ -40,14 +40,24 @@
 
 h1 {
  color: #eee;
- font-size: 1.1em;
+ font-size: 0.9em;
  font-family: Verdana;
 }
 
 p {
  color: #eee;
- font-size: 1em;
+ font-size: 0.8em;
  font-family: Verdana;
+}
+
+p {
+ color: #eee;
+ font-size: 0.8em;
+ font-family: Verdana;
+}
+
+sub {
+ color: #eee;
 }
 
 input:checked + .slider {

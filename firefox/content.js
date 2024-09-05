@@ -8,12 +8,32 @@
 // @match    https://*.psim.us/*
 // ==/UserScript==
 
+// ==UserScript==
+// @name     RTB
+// @version  1.0.0
+// @author   me
+// @match    http://play.pokemonshowdown.com/*
+// @match    https://play.pokemonshowdown.com/*
+// @match    http://*.psim.us/*
+// @match    https://*.psim.us/*
+// ==/UserScript==
 var loaded = false;
 function load(file) {
-	let elm = document.createElement("script")
-	elm.src = chrome.runtime.getURL("/" + file)
-	document.body.appendChild(elm)
+	let elm = document.createElement("script");
+	elm.src = chrome.runtime.getURL("/" + file);
+	document.body.appendChild(elm);
 };
+document.addEventListener("myCustomEvent", function(evt) {
+	chrome.runtime.sendMessage(
+		evt.detail,
+		e => {
+			var evt = new CustomEvent("StorageResponse", {detail: e});
+			document.dispatchEvent(evt);
+		}
+	);
+}, false);
+//load("production.min.js");
+load("battle_safety_check.js");
 chrome.storage.sync.get('enabled', val => {
 	if (val.enabled === '' || loaded == true) return;
 	loaded = true
