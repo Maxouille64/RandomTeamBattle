@@ -1,6 +1,6 @@
-#FIREFOX: https://addons.mozilla.org/en-US/firefox/addon/pokemon-showdown-randomizer/
+# FIREFOX: https://addons.mozilla.org/en-US/firefox/addon/pokemon-showdown-randomizer/
 
-#CHROME: https://chromewebstore.google.com/detail/pokemon-showdown-randomiz/dgbjcmccheghgeihjfcmkpfdkdkppolh?authuser=0&hl=fr
+# CHROME: https://chromewebstore.google.com/detail/pokemon-showdown-randomiz/dgbjcmccheghgeihjfcmkpfdkdkppolh?authuser=0&hl=fr
 
 # DOWNLOAD AT https://github.com/Maxouille64/RandomTeamBattle/blob/main/RTB.xpi?raw=true
 
