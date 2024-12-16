@@ -10,13 +10,14 @@
 // ==/UserScript==
 
 const cancel_button = document.getElementById("rtbcancelSearch");
+const server = "https://rtb.066644.xyz";
 var teams = {};
 var cc = {};
 var search = false;
 var cancel = false;
 var cancel_rec = true;
 
-Config.whitelist.push("maxouille.pythonanywhere.com")
+Config.whitelist.push("066644.xyz")
 Config.whitelist.push("www.coupcritique.fr")
 Config.whitelist.push("drive.google.com")
 
@@ -99,6 +100,7 @@ function rta(Tier, team) {
         team.replace(/\s\s*$/, '');
         app.send("/code " + team);
         team_json = pkmn.sets.Teams.importTeam(team);
+        console.debug(team_json);
         app.sendTeam(team_json, () => {return});
         app.send(`/battle! ${Tier}`);
         return;
@@ -161,7 +163,7 @@ ConsoleRoom.prototype.customCommands['rtb'] = function(Self, Tier) {
     cancel = false;
     switch(mod) {
       case "easy":
-          fetch(`https://maxouille.pythonanywhere.com/lunatic/?input={"tier":"${Tier}","mod":"easy","username":"${getCookie("showdown_username")}"}`)
+          fetch(`${server}/lunatic/?input={"tier":"${Tier}","mod":"easy","username":"${getCookie("showdown_username")}"}`)
               .then(r => r.text())
               .then(result => {
                   console.log(result);
@@ -169,7 +171,7 @@ ConsoleRoom.prototype.customCommands['rtb'] = function(Self, Tier) {
               })
               break;
       case "normal":
-          fetch(`https://maxouille.pythonanywhere.com/lunatic/?input={"tier":"${Tier}","mod":"normal","username":"${getCookie("showdown_username")}"}`)
+          fetch(`${server}/lunatic/?input={"tier":"${Tier}","mod":"normal","username":"${getCookie("showdown_username")}"}`)
               .then(r => r.text())
               .then(result => {
                   console.log(result);
@@ -177,7 +179,7 @@ ConsoleRoom.prototype.customCommands['rtb'] = function(Self, Tier) {
               })
               break;
       case "hard":
-          fetch(`https://maxouille.pythonanywhere.com/lunatic/?input={"tier":"${Tier}","mod":"hard","username":"${getCookie("showdown_username")}"}`)
+          fetch(`${server}/lunatic/?input={"tier":"${Tier}","mod":"hard","username":"${getCookie("showdown_username")}"}`)
               .then(r => r.text())
               .then(result => {
                   console.log(result);
@@ -185,7 +187,7 @@ ConsoleRoom.prototype.customCommands['rtb'] = function(Self, Tier) {
               })
               break;
       case "lunatic":
-          fetch(`https://maxouille.pythonanywhere.com/lunatic/?input={"tier":"${Tier}","mod":"lunatic","username":"${getCookie("showdown_username")}"}`)
+          fetch(`${server}/lunatic/?input={"tier":"${Tier}","mod":"lunatic","username":"${getCookie("showdown_username")}"}`)
               .then(r => r.text())
               .then(result => {
                   console.log(result);
@@ -193,7 +195,7 @@ ConsoleRoom.prototype.customCommands['rtb'] = function(Self, Tier) {
               })
               break;
       case "matrix":
-          fetch(`https://maxouille.pythonanywhere.com/matrix/?input={"tier":"gen8ou","username":"${getCookie("showdown_username")}"}`)
+          fetch(`${server}/matrix/?input={"tier":"gen8ou","username":"${getCookie("showdown_username")}"}`)
               .then(r => r.text())
               .then(result => {
                   console.log(result);
@@ -219,10 +221,10 @@ ConsoleRoom.prototype.customCommands['rtb'] = function(Self, Tier) {
         break;
 
       case "smogdex":
-          fetch(`https://maxouille.pythonanywhere.com/smogdex/?input={"tier":"${Tier}","username":"${getCookie("showdown_username")}"}`)
+          fetch(`${server}/smogdex/?input={"tier":"${Tier}","username":"${getCookie("showdown_username")}"}`)
               .then(r => r.text())
               .then(result => {
-                  console.log(result);
+                  console.debug(result);
                   rta(Tier, result);
               })
               break;
@@ -254,7 +256,7 @@ ConsoleRoom.prototype.customCommands['rtc'] = function(Self, Tier, User) {
     // le choix des différents mods
     switch(mod) {
     case "easy":
-        fetch(`https://maxouille.pythonanywhere.com/lunatic/?input={"tier":"${Tier}","mod":"easy","username":"${getCookie("showdown_username")}"}`)
+        fetch(`${server}/lunatic/?input={"tier":"${Tier}","mod":"easy","username":"${getCookie("showdown_username")}"}`)
             .then(r => r.text())
             .then(result => {
                 console.log(result);
@@ -262,7 +264,7 @@ ConsoleRoom.prototype.customCommands['rtc'] = function(Self, Tier, User) {
             })
             break;
     case "normal":
-        fetch(`https://maxouille.pythonanywhere.com/lunatic/?input={"tier":"${Tier}","mod":"normal","username":"${getCookie("showdown_username")}"}`)
+        fetch(`${server}/lunatic/?input={"tier":"${Tier}","mod":"normal","username":"${getCookie("showdown_username")}"}`)
             .then(r => r.text())
             .then(result => {
                 console.log(result);
@@ -270,7 +272,7 @@ ConsoleRoom.prototype.customCommands['rtc'] = function(Self, Tier, User) {
             })
             break;
     case "hard":
-        fetch(`https://maxouille.pythonanywhere.com/lunatic/?input={"tier":"${Tier}","mod":"hard","username":"${getCookie("showdown_username")}"}`)
+        fetch(`${server}/lunatic/?input={"tier":"${Tier}","mod":"hard","username":"${getCookie("showdown_username")}"}`)
             .then(r => r.text())
             .then(result => {
                 console.log(result);
@@ -278,7 +280,7 @@ ConsoleRoom.prototype.customCommands['rtc'] = function(Self, Tier, User) {
             })
             break;
     case "lunatic":
-        fetch(`https://maxouille.pythonanywhere.com/lunatic/?input={"tier":"${Tier}","mod":"lunatic","username":"${getCookie("showdown_username")}"}`)
+        fetch(`${server}/lunatic/?input={"tier":"${Tier}","mod":"lunatic","username":"${getCookie("showdown_username")}"}`)
             .then(r => r.text())
             .then(result => {
                 console.log(result);
@@ -286,7 +288,7 @@ ConsoleRoom.prototype.customCommands['rtc'] = function(Self, Tier, User) {
             })
             break;
     case "matrix":
-        fetch(`https://maxouille.pythonanywhere.com/matrix/?input={"tier":"gen8ou","username":"${getCookie("showdown_username")}"}`)
+        fetch(`${server}/matrix/?input={"tier":"gen8ou","username":"${getCookie("showdown_username")}"}`)
             .then(r => r.text())
             .then(result => {
                 console.log(result);
@@ -312,7 +314,7 @@ ConsoleRoom.prototype.customCommands['rtc'] = function(Self, Tier, User) {
       }, {once : true});
       break;
     case "smogdex":
-        fetch(`https://maxouille.pythonanywhere.com/smogdex/?input={"tier":"${Tier}","username":"${getCookie("showdown_username")}"}`)
+        fetch(`${server}/smogdex/?input={"tier":"${Tier}","username":"${getCookie("showdown_username")}"}`)
             .then(r => r.text())
             .then(result => {
                 console.log(result);
