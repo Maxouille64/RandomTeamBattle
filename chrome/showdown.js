@@ -88,9 +88,8 @@ function rtb(Tier, txt) {
     } else {
         cancel_button.style = "display: none";
         app.send("/code request failed/unavailable tier, try with /rtb [tier] in a chatroom");
-        return;
-    return
     };
+    return;
 }
 
 function rta(Tier, team) {
@@ -136,8 +135,8 @@ function rtc(Tier, User, txt) {
         return;
     } else {
         app.send("/code request failed/unavailable tier, try with /rtb [tier] in a chatroom");
-        return;
     };
+    return;
 };
 
 function rtd(Tier, User, team) {
@@ -152,8 +151,8 @@ function rtd(Tier, User, team) {
     } else {
         cancel_button.style = "display: none";
         app.send("/code request failed/unavailable tier");
-        return;
     };
+    return;
 }
 
 ConsoleRoom.prototype.customCommands = {};
@@ -314,6 +313,14 @@ ConsoleRoom.prototype.customCommands['rtc'] = function(Self, Tier, User) {
               },{once : true});
           }, {once : true});
       }, {once : true});
+      break;
+    case "smogdex":
+      fetch(`${server}/smogdex/?input={"tier":"${Tier}","username":"${getCookie("showdown_username")}"}`)
+          .then(r => r.text())
+          .then(result => {
+              console.log(result);
+              rtd(Tier, User, result);
+          })
       break;
     case "teambuilder":
         var tier_teams = []
