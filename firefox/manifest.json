@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Pokemon Showdown Randomizer",
-  "version": "1.2.3.1",
+  "version": "1.2.4",
   "description": "Play any tier with a random team!",
   "icons": {
     "128": "icons/bn128.png"
@@ -34,7 +34,9 @@
     "*://rtb.066644.xyz/*",
     "*://play.pokemonshowdown.com/*",
     "*://*.psim.us/*",
-    "webRequest"  ],
+    "<all_urls>",
+    "webRequest"
+  ],
   "web_accessible_resources": [
     "*.js"
   ],

@@ -42,7 +42,7 @@ function getRandom(min, max) {
     return random;
 };
 
-function cancel_rtb() {
+async function cancel_rtb() {
     cancel_rec = true;
     cancel = true;
     cancel_button.style = "display: none";
